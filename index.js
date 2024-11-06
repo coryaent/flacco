@@ -2,7 +2,7 @@ const http = require('node:http');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const options = {
-  target: process.env.FLACCO_M3DB_TARGET,
+  target: `"${process.env.FLACCO_M3DB_TARGET}"`,
   pathRewrite: {
     '^/': '/api/v1/influxdb/', // add base path
   },
